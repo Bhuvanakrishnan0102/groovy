@@ -5,7 +5,7 @@ node{
   stage('Test'){
     echo 'testing'
   }
-  if(currentBuild.result=='SUCCESS'){
+  if(currentBuild.currentResult=='SUCCESS'){
     echo 'looks good'
   }else{
     echo 'failed'
