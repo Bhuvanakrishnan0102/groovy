@@ -1,8 +1,8 @@
 node{
-  stage{'build'){
+  stage{'Build'){
     echo 'building'
   }
-  stages('test'){
+  stages('Test'){
     echo 'testing'
   }
   if(currentBuild.result=='SUCCESS'){
