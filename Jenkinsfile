@@ -1,29 +1,13 @@
-pipeline{
-  agent any
-  stages{
-    stage('Built'){
-      steps{
-        echo " i am building"
-      }
-    }
-    stage('test'){
-      steps{
-        echo "testing"
-      }
-    }
-    stage('deploy'){
-      steps{
-        echo "deploying"
-      }
-    }
+node{
+  stage{'build'){
+    echo 'building'
   }
-  post{
-    success{
-      echo 'success'
-    }
-    failure{
-      echo 'failure'
-    }
+  stages('test'){
+    echo 'testing'
+  }
+  if(currentBuild.result=='SUCCESS'){
+    echo 'looks good'
+  }else{
+    echo 'failed'
   }
 }
-
