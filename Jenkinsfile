@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment{
-    PYTHON_PATH='C:\Users\bhuva\AppData\Local\Programs\Python\Python311;C:\Users\bhuva\AppData\Local\Programs\Python\Python311\Scripts'
+    PYTHON_PATH = 'C:\\Users\\bhuva\\AppData\\Local\\Programs\\Python\\Python311;C:\\Users\\bhuva\\AppData\\Local\\Programs\\Python\\Python311\\Scripts'
   }
   stages{
     stage('Checkout'){
@@ -10,7 +10,7 @@ pipeline {
       }
     }
   }
-  stages('Build'){
+  stage('Build'){
     steps{
       bat '''
       set PATH=%PYTHON_PATH%;%PATH%
